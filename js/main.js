@@ -10,9 +10,7 @@ function getInfo() {
 }
 
 function clearCity() {
-  setCookie('City', "", {
-    'max-age': -1
-  })
+  document.cookie ='City='+""+'; max-age: -1';
 }
 
 
