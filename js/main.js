@@ -33,6 +33,7 @@ if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
 	document.querySelector('#greeting').style.display = '';
 	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
+	document.querySelector('#clear').style.display = '';
 }
 
 // создаем пустой массив и обходим все элементы формы с тегом input и типом чекбокс
