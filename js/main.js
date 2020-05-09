@@ -50,6 +50,7 @@ localStorage.setItem("chk", JSON.stringify(mem))
 // заводим в переменную значение из локалсторидж по ключу chk, затем проверяем
 // если в хранилище по этому ключу есть что-то, то получаем массив
 let chk = JSON.parse(localStorage.getItem('chk'))
+console.log(chk)
 if (chk!==undefined) {
 	for (let i=0; i<chk.length;i++) {
 		elements[i].checked=chk[i]
