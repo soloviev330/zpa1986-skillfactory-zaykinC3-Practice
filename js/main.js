@@ -8,6 +8,15 @@ function getInfo() {
 	document.cookie =encodeURIComponent('City')+'='+encodeURIComponent(city)+'; expires='+date+'; path=/';
 }
 }
+
+function clearCity() {
+  setCookie('City', "", {
+    'max-age': -1
+  })
+}
+
+
+
 // получаем значение куки по ключу заданному ключу (свойству) и возвращаем его
 function getCookie(name) {
 	var matches = document.cookie.match(new RegExp(
@@ -43,10 +52,9 @@ for (let i=0; i<elements.length; i++) {
 	}
 }
 console.log(mem)
-if (mem.indexOf(1) != -1) {
 // здесь передаем в локальное хранилище именно JSON, чтобы потом не работать со строкой
 localStorage.setItem("chk", JSON.stringify(mem))
-}}
+}
 
 // заводим в переменную значение из локалсторидж по ключу chk, затем проверяем
 // если в хранилище по этому ключу есть что-то, то получаем массив
