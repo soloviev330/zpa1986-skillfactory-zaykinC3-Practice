@@ -32,7 +32,6 @@ let nameCity = getCookie('City')
 if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
 	document.querySelector('#greeting').style.display = '';
-	document.querySelector('#clear').style.display = '';
 	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
 }
 
