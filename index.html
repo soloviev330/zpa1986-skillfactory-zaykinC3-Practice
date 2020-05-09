@@ -20,12 +20,12 @@
   <!-- ----------------------------------------------------- -->
   
   <p><b>Ваши предпочтения:</b><Br>
-   <input type="checkbox" name="prefer1" value="ie" style="margin-top: 10px"> не звонить мне<Br>
-   <input type="checkbox" name="prefer2" value="opera"> я прочитал и согласен с правилами пользования сервисом<Br>
-   <input type="checkbox" name="prefer3" value="firefox"> я не выбираю эту галочку<Br>
-   <input type="checkbox" name="prefer4" value="ie"> я подтверждаю, что свобода в интернете — это возможность выбирать галочки<Br>
-   <input type="checkbox" name="prefer5" value="opera"> мне больше 12 лет<Br>
-   <input type="checkbox" name="prefer6" value="firefox"> это задание выполнено правильно<Br>
+   <input type="checkbox" name="prefer1" value="ie" style="margin-top: 10px" onclick="saveChk()"> не звонить мне<Br>
+   <input type="checkbox" name="prefer2" value="opera" onclick="saveChk()"> я прочитал и согласен с правилами пользования сервисом<Br>
+   <input type="checkbox" name="prefer3" value="firefox" onclick="saveChk()"> я не выбираю эту галочку<Br>
+   <input type="checkbox" name="prefer4" value="ie" onclick="saveChk()"> я подтверждаю, что свобода в интернете — это возможность выбирать галочки<Br>
+   <input type="checkbox" name="prefer5" value="opera" onclick="saveChk()"> мне больше 12 лет<Br>
+   <input type="checkbox" name="prefer6" value="firefox" onclick="saveChk()"> это задание выполнено правильно<Br>
   </p>
   
   <p><input id="save" type="button" value="Сохранить" onclick="getInfo()"></p>

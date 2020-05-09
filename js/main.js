@@ -20,7 +20,6 @@ function getCookie(name) {
 // 3. выводим значение города
 
 let nameCity = getCookie('City')
-console.log(nameCity)
 if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
 	document.querySelector('#greeting').style.display = '';
@@ -31,8 +30,9 @@ if (nameCity!==undefined){
 // нажатой галке назначаем 1, а если галки нет, то 0. Далее строим массив из запомненных положений
 // также проверяем, нажата ли хоть одна галка. если не нажата, то ничего не делаем
 // а если хоть одна галка нажата, то записываем массив в localStorage в виде JSON
-const mem = [];
 let elements = document.forms[0].querySelectorAll("input[type='checkbox']")
+function saveChk(){
+const mem = [];
 for (let i=0; i<elements.length; i++) {
 	let element = elements[i];
 	if (element.checked == true) {
@@ -42,16 +42,17 @@ for (let i=0; i<elements.length; i++) {
 		mem.push(0)
 	}
 }
+console.log(mem)
 if (mem.indexOf(1) != -1) {
 // здесь передаем в локальное хранилище именно JSON, чтобы потом не работать со строкой
 localStorage.setItem("chk", JSON.stringify(mem))
-}
+}}
 
 // заводим в переменную значение из локалсторидж по ключу chk, затем проверяем
 // если в хранилище по этому ключу есть что-то, то получаем массив
 let chk = JSON.parse(localStorage.getItem('chk'))
 console.log(chk)
-if (chk!==undefined) {
+if (chk!==null) {
 	for (let i=0; i<chk.length;i++) {
 		elements[i].checked=chk[i]
 	}
