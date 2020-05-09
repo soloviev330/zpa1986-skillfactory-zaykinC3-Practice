@@ -10,9 +10,10 @@ function getInfo() {
 }
 
 function clearCity() {
-  document.cookie ='City='+""+'; max-age: -1';
+  var cookie_date = new Date ( );  // Текущая дата и время
+  cookie_date.setTime ( cookie_date.getTime() - 1 );
+  document.cookie = 'City' += "=; expires=" + cookie_date.toGMTString();
 }
-
 
 
 // получаем значение куки по ключу заданному ключу (свойству) и возвращаем его
