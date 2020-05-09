@@ -4,29 +4,27 @@ function getInfo() {
 	let city = document.getElementById("city").value;
 	let date = new Date(Date.now() + 86400e3);
 	date = date.toUTCString();
-	document.cookie ='City='+city+'; expires='+date;
+	document.cookie =encodeURIComponent('City')+'='+encodeURIComponent(city)+'; expires='+date+'; path=/';
 
 }
 // получаем значение куки по ключу заданному ключу (свойству) и возвращаем его
 function getCookie(name) {
-  let matches = document.cookie.match(new RegExp(
-    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-  ));
- return matches ? decodeURIComponent(matches[1]) : undefined;
+	var matches = document.cookie.match(new RegExp(
+		'(?:^|\s)' + name.replace(/([.$?*+\\\/{}|()\[\]^])/g, '\\$1') + '=(.*?)(?:;|$)'));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-
 // получаем значение куки по ключу city и если это значени существует, то
 // 1. убираем поле ввода города
 // 2. делаем видимым поле с приветствием
 // 3. выводим значение города
-let nameCity = getCookie("City")
-// console.log(nameCity)
+
+let nameCity = getCookie('City')
+console.log(nameCity)
 if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
 	document.querySelector('#greeting').style.display = '';
 	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
 }
-
 
 // создаем пустой массив и обходим все элементы формы с тегом input и типом чекбокс
 // нажатой галке назначаем 1, а если галки нет, то 0. Далее строим массив из запомненных положений
