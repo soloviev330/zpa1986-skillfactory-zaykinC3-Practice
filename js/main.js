@@ -12,7 +12,7 @@ function getInfo() {
 function clearCity() {
   var cookie_date = new Date ( );  // Текущая дата и время
   cookie_date.setTime ( cookie_date.getTime() - 1 );
-  document.cookie = 'City' += "=; expires=" + cookie_date.toGMTString();
+  document.cookie = "City="+""+"; expires=" + cookie_date.toGMTString();
 }
 
 
