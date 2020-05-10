@@ -10,7 +10,10 @@ function getInfo() {
 }
 
 function clearCity() {
-  var cookies = document.cookie.split(";");
+	window.location.reload()
+	document.querySelector('#input_city').style.display = '';
+	document.querySelector('#greeting').style.display = 'none';
+	var cookies = document.cookie.split(";");
 	for (var i = 0; i < cookies.length; i++) {
 		var cookie = cookies[i];
 		var eqPos = cookie.indexOf("=");
@@ -18,10 +21,7 @@ function clearCity() {
 		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;";
 		document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	}
-	window.location.reload()
-	document.querySelector('#input_city').style.display = '';
-	document.querySelector('#greeting').style.display = 'none';
-	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
+
 }
 
 
