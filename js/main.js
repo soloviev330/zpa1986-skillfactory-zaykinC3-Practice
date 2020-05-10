@@ -2,6 +2,7 @@
 // в куки записываем значение города и создаем для него дату экспирации +1 день
 function getInfo() {
 	let city = document.getElementById("city").value;
+	document.querySelector('#save').style.display = 'none';
 	if (city!==""){
 	let date = new Date(Date.now() + 86400e3);
 	date = date.toUTCString();
