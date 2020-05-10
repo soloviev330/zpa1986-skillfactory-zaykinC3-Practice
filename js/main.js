@@ -13,6 +13,7 @@ function clearCity() {
 	window.location.reload()
 	document.querySelector('#input_city').style.display = '';
 	document.querySelector('#greeting').style.display = 'none';
+	document.querySelector('#save').style.display = '';
 	var cookies = document.cookie.split(";");
 	for (var i = 0; i < cookies.length; i++) {
 		var cookie = cookies[i];
@@ -41,6 +42,7 @@ if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
 	document.querySelector('#greeting').style.display = '';
 	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
+	document.querySelector('#save').style.display = 'none';
 }
 
 // создаем пустой массив и обходим все элементы формы с тегом input и типом чекбокс
