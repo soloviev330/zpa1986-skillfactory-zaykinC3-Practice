@@ -18,6 +18,9 @@ function clearCity() {
 		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;";
 		document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	}
+	document.querySelector('#input_city').style.display = '';
+	document.querySelector('#greeting').style.display = 'none';
+	document.querySelector('#greeting_text').innerText="Ваш город: "+nameCity
 }
 
 
