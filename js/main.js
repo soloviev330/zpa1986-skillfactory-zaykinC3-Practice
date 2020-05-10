@@ -10,9 +10,7 @@ function getInfo() {
 }
 
 function deleteCookie(name) {
-		  setCookie(name, "", {
-		    'max-age': -1
-})
+	document.cookie =encodeURIComponent(name)+'='+''+'; max-age=-1'+'; path=/';
 }
 
 function clearCity(){
