@@ -9,11 +9,15 @@ function getInfo() {
 }
 }
 
-function clearCity() {
-  var cookie_date = new Date ( );  // Текущая дата и время
-  cookie_date.setTime ( cookie_date.getTime() - 1 );
-  document.cookie = "City="+""+"; expires=" + cookie_date.toGMTString();
+function deleteCookie(name) {
+		  setCookie(name, "", {
+		    'max-age': -1
+})
 }
+
+function clearCity(){
+			deleteCookie(CITY_NAME)
+		}
 
 
 // получаем значение куки по ключу заданному ключу (свойству) и возвращаем его
@@ -26,7 +30,7 @@ function getCookie(name) {
 // 1. убираем поле ввода города
 // 2. делаем видимым поле с приветствием
 // 3. выводим значение города
-
+const CITY_NAME='City';
 let nameCity = getCookie('City')
 if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
