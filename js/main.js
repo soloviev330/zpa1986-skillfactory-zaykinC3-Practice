@@ -24,7 +24,13 @@ function clearCity() {
 	}
 
 }
-
+// фиксируем знчения чекбоксов
+function freeze_Chk(){
+	for (let i=0; i<elements.length; i++) {
+	let element = elements[i];
+	element.disabled="True"
+	}
+}
 
 // получаем значение куки по ключу заданному ключу (свойству) и возвращаем его
 function getCookie(name) {
@@ -32,11 +38,11 @@ function getCookie(name) {
 		'(?:^|\s)' + name.replace(/([.$?*+\\\/{}|()\[\]^])/g, '\\$1') + '=(.*?)(?:;|$)'));
 	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+
 // получаем значение куки по ключу city и если это значени существует, то
 // 1. убираем поле ввода города
 // 2. делаем видимым поле с приветствием
 // 3. выводим значение города
-
 let nameCity = getCookie('City')
 if (nameCity!==undefined){
 	document.querySelector('#input_city').style.display = 'none';
@@ -70,7 +76,8 @@ localStorage.setItem("chk", JSON.stringify(mem))
 // если в хранилище по этому ключу есть что-то, то получаем массив
 let chk = JSON.parse(localStorage.getItem('chk'))
 console.log(chk)
-if (chk!==null) {
+if (chk!==null && chk.indexOf(1)!==-1) {
+	freeze_Chk()
 	for (let i=0; i<chk.length;i++) {
 		elements[i].checked=chk[i]
 	}
